@@ -45,6 +45,7 @@ PROTOCOLS = {
     "mitsubishi_fe": Protocol.PROTOCOL_MITSUBISHI_FE,
     "mitsubishi_heavy_fdtc": Protocol.PROTOCOL_MITSUBISHI_HEAVY_FDTC,
     "mitsubishi_heavy_zj": Protocol.PROTOCOL_MITSUBISHI_HEAVY_ZJ,
+    "mitsubishi_heavy_zea": Protocol.PROTOCOL_MITSUBISHI_HEAVY_ZEA,
     "mitsubishi_heavy_zm": Protocol.PROTOCOL_MITSUBISHI_HEAVY_ZM,
     "mitsubishi_heavy_zmp": Protocol.PROTOCOL_MITSUBISHI_HEAVY_ZMP,
     "mitsubishi_heavy_kj": Protocol.PROTOCOL_MITSUBISHI_KJ,
@@ -127,6 +128,6 @@ def to_code(config):
     cg.add(var.set_max_temperature(config[CONF_MAX_TEMPERATURE]))
     cg.add(var.set_min_temperature(config[CONF_MIN_TEMPERATURE]))
 
-    cg.add_library("tonia/HeatpumpIR", "1.0.27")
+    cg.add_library("boldnz/arduino-heatpumpir", "dev-misi_zea")
     if CORE.is_libretiny:
         CORE.add_platformio_option("lib_ignore", "IRremoteESP8266")
